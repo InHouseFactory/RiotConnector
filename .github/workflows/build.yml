@@ -1,0 +1,54 @@
+on:
+  push:
+    branches:
+      - main
+
+env:
+  dotnet-version: 8.0.x
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure .NET SDK ${{ env.dotnet-version }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.dotnet-version }}
+          
+      - name: Generate version
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: patch
+          default_prerelease_bump: patch
+          release_branches: main,develop
+          pre_release_branches: prerelease
+          tag_prefix: ''
+          dry_run: true  
+            
+      - name: Restore dependencies
+        run: dotnet restore
+          
+      - name: .NET Build
+        run: dotnet build --configuration Release --no-restore /p:Version=${{ steps.tag_version.outputs.new_tag }}
+          
+      - name: .NET Pack
+        run: dotnet pack --configuration Release --no-build --no-restore /p:Version=${{ steps.tag_version.outputs.new_tag }}
+
+      - name: Upload package
+        run: |
+          dotnet nuget push **/*.nupkg \
+            --source https://nuget.pkg.github.com/InHouseFactory/index.json \
+            --api-key ${{ secrets.NUGET_KEY }} \
+            --skip-duplicate
+          
+      - name: Tag
+        uses: mathieudutour/github-tag-action@v6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: ''
+          custom_tag: ${{ steps.tag_version.outputs.new_tag }}
