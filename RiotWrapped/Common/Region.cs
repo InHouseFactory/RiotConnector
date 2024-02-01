@@ -2,5 +2,7 @@
 
 public enum Region
 {
-    
+    Europe,
+    Americas,
+    Asia
 }

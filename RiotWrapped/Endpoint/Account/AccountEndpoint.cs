@@ -1,11 +1,10 @@
 ﻿using System.Net;
 using System.Text.Json;
 using RiotWrapped.Common;
-using RiotWrapped.Endpoint.Account;
 using RiotWrapped.Exception;
 using RiotWrapped.Http;
 
-namespace RiotWrapped.Endpoint;
+namespace RiotWrapped.Endpoint.Account;
 
 public interface IAccountEndpoint
 {

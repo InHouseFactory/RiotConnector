@@ -3,25 +3,35 @@ using RiotWrapped.Common;
 
 namespace RiotWrapped.Extension;
 
-public static class RegionExtension
+public static class RegionExtensions
 {
-    private static readonly Dictionary<Region, string> domains;
+    private static readonly Dictionary<Region, string> regionDomains;
+    private static readonly Dictionary<GameRegion, string> gameRegionDomains;
 
-    static RegionExtension()
+    static RegionExtensions()
     {
-        domains = new Dictionary<Region, string>
+        regionDomains = new Dictionary<Region, string>
         {
-            [Region.Euw] = "euw1",
-            [Region.Eune] = "br1",
-            [Region.Na] = "na1",
-            [Region.Eune] = "eun1",
-            [Region.Ru] = "ru",
-            [Region.Tr] = "tr1",
-            [Region.Lan] = "la1",
-            [Region.Las] = "la2",
-            [Region.Oce] = "oc1",
+            [Region.Europe] = "europe",
+            [Region.Americas] = "americas",
+            [Region.Asia] = "asia"
+        };
+        
+        gameRegionDomains = new Dictionary<GameRegion, string>
+        {
+            [GameRegion.Euw] = "euw1",
+            [GameRegion.Eune] = "eun1",
+            [GameRegion.Na] = "na1",
+            [GameRegion.Br] = "br1",
+            [GameRegion.Lan] = "la1",
+            [GameRegion.Oce] = "oc1",
+            [GameRegion.Ru] = "ru",
+            [GameRegion.Tr] = "tr1",
+            [GameRegion.Jp] = "jp1",
+            [GameRegion.Kr] = "kr"
         };
     }
     
-    public static string GetDomain(this Region region) => domains[region];
+    public static string GetDomain(this Region region) => regionDomains[region];
+    public static string GetDomain(this GameRegion region) => gameRegionDomains[region];
 }
