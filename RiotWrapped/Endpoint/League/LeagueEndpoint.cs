@@ -19,10 +19,11 @@ public class LeagueEndpoint : ILeagueEndpoint
     {
         this.client = client;
     }
-    
+
     public async Task<List<LeagueEntryDto>> GetLeagueEntriesBySummonerIdAsync(GameRegion region, string summonerId)
     {
-        var response = await client.GetAsync<List<LeagueEntryDto>>(region, $"/riot/league/v1/entries/by-summoner/{summonerId}");
+        var response =
+            await client.GetAsync<List<LeagueEntryDto>>(region, $"/riot/league/v1/entries/by-summoner/{summonerId}");
         return response.StatusCode switch
         {
             HttpStatusCode.OK => JsonSerializer.Deserialize<List<LeagueEntryDto>>(response.Body) ?? [],

@@ -5,8 +5,7 @@ namespace RiotWrapped.Endpoint.League;
 
 public class LeagueDto
 {
-    [JsonPropertyName("leagueId")]
-    public required string LeagueId { get; init; }
+    [JsonPropertyName("leagueId")] public required string LeagueId { get; init; }
 
     [JsonPropertyName("queueType")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
@@ -16,9 +15,7 @@ public class LeagueDto
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public required Rank Rank { get; init; }
 
-    [JsonPropertyName("name")]
-    public required string Name { get; init; }
+    [JsonPropertyName("name")] public required string Name { get; init; }
 
-    [JsonPropertyName("entries")]
-    public required List<LeagueEntryDto> Entries { get; init; }
+    [JsonPropertyName("entries")] public required List<LeagueEntryDto> Entries { get; init; }
 }

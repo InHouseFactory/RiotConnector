@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using RiotWrapped.Common;
+﻿using RiotWrapped.Common;
 
 namespace RiotWrapped.Extension;
 
@@ -16,7 +15,7 @@ public static class RegionExtensions
             [Region.Americas] = "americas",
             [Region.Asia] = "asia"
         };
-        
+
         gameRegionDomains = new Dictionary<GameRegion, string>
         {
             [GameRegion.Euw] = "euw1",
@@ -31,7 +30,14 @@ public static class RegionExtensions
             [GameRegion.Kr] = "kr"
         };
     }
-    
-    public static string GetDomain(this Region region) => regionDomains[region];
-    public static string GetDomain(this GameRegion region) => gameRegionDomains[region];
+
+    public static string GetDomain(this Region region)
+    {
+        return regionDomains[region];
+    }
+
+    public static string GetDomain(this GameRegion region)
+    {
+        return gameRegionDomains[region];
+    }
 }

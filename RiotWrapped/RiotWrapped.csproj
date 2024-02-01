@@ -3,11 +3,18 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
+        <Title>RiotWrapped</Title>
+        <Authors>Roxeez</Authors>
+        <Company>InHouseFactory</Company>
         <Nullable>enable</Nullable>
+        <Description>Wrapper for the RiotGames API</Description>
+        <PackageProjectUrl>https://github.com/InHouseFactory/RiotWrapped</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/InHouseFactory/RiotWrapped</RepositoryUrl>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>RiotGames, API, Rest, C#</PackageTags>
+        <IsPackable>true</IsPackable>
+        <Configurations>Debug;Release</Configurations>
     </PropertyGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
-    </ItemGroup>
-
 </Project>

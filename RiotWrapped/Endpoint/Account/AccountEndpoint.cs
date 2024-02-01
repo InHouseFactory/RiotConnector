@@ -20,7 +20,7 @@ public class AccountEndpoint : IAccountEndpoint
     {
         this.client = client;
     }
-    
+
     public async Task<AccountDto?> GetAccountByPuuidAsync(Region region, string puuid)
     {
         var response = await client.GetAsync<AccountDto>(region, $"/riot/account/v1/accounts/by-puuid/{puuid}");
@@ -31,10 +31,11 @@ public class AccountEndpoint : IAccountEndpoint
             _ => throw new RiotWrappedException(response.StatusCode, response.Body)
         };
     }
-    
+
     public async Task<AccountDto?> GetAccountByRiotIdAsync(Region region, string gameName, string tagLine)
     {
-        var response = await client.GetAsync<AccountDto>(region, $"/riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine}");
+        var response =
+            await client.GetAsync<AccountDto>(region, $"/riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine}");
         return response.StatusCode switch
         {
             HttpStatusCode.OK => JsonSerializer.Deserialize<AccountDto>(response.Body),
