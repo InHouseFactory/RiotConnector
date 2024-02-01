@@ -1,6 +1,9 @@
 # RiotWrapped
-RiotWrapped is a .NET wrapper for the Riot Games API. It is designed to be easy to use and to provide a simple interface for interacting with the Riot Games API.  
-This library is still in development and is not yet feature complete.
+RiotWrapped is a .NET wrapper for the Riot Games API.  
+It is designed to be easy to use and to provide a simple interface for interacting with the Riot Games API.  
+
+  
+### This library is still in development and is not yet feature complete.
 
 ## Installation
 Using Package Manager
