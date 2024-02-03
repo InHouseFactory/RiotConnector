@@ -1,10 +1,10 @@
 ﻿using System.Net;
 using System.Text.Json;
-using RiotWrapped.Common;
-using RiotWrapped.Exception;
-using RiotWrapped.Http;
+using RiotConnector.Common;
+using RiotConnector.Exception;
+using RiotConnector.Http;
 
-namespace RiotWrapped.Endpoint.Summoner;
+namespace RiotConnector.Endpoint.Summoner;
 
 public interface ISummonerEndpoint
 {
@@ -31,7 +31,7 @@ public class SummonerEndpoint : ISummonerEndpoint
         {
             HttpStatusCode.OK => JsonSerializer.Deserialize<SummonerDto>(response.Body),
             HttpStatusCode.NotFound => default,
-            _ => throw new RiotWrappedException(response.StatusCode, response.Body)
+            _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };
     }
 
@@ -42,7 +42,7 @@ public class SummonerEndpoint : ISummonerEndpoint
         {
             HttpStatusCode.OK => JsonSerializer.Deserialize<SummonerDto>(response.Body),
             HttpStatusCode.NotFound => default,
-            _ => throw new RiotWrappedException(response.StatusCode, response.Body)
+            _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };
     }
 
@@ -54,7 +54,7 @@ public class SummonerEndpoint : ISummonerEndpoint
         {
             HttpStatusCode.OK => JsonSerializer.Deserialize<SummonerDto>(response.Body),
             HttpStatusCode.NotFound => default,
-            _ => throw new RiotWrappedException(response.StatusCode, response.Body)
+            _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };
     }
 
@@ -65,7 +65,7 @@ public class SummonerEndpoint : ISummonerEndpoint
         {
             HttpStatusCode.OK => JsonSerializer.Deserialize<SummonerDto>(response.Body),
             HttpStatusCode.NotFound => default,
-            _ => throw new RiotWrappedException(response.StatusCode, response.Body)
+            _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };
     }
 }

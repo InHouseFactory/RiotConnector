@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using RiotWrapped.Common;
+using RiotConnector.Common;
 
-namespace RiotWrapped.Endpoint.League;
+namespace RiotConnector.Endpoint.League;
 
 public class LeagueDto
 {

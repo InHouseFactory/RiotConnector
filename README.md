@@ -1,5 +1,5 @@
-# RiotWrapped
-RiotWrapped is a .NET wrapper for the Riot Games API.  
+# RiotConnector
+RiotConnector is a .NET wrapper for the Riot Games API.  
 It is designed to be easy to use and to provide a simple interface for interacting with the Riot Games API.  
 
   
@@ -8,18 +8,18 @@ It is designed to be easy to use and to provide a simple interface for interacti
 ## Installation
 Using Package Manager
 ```shell
-Install-Package RiotWrapped
+Install-Package RiotConnector
 ```
 
 Using .NET CLI
 ```shell
-dotnet add package RiotWrapped
+dotnet add package RiotConnector
 ```
 
 ## Usage
 ```csharp
-using RiotWrapped;
-using RiotWrapped.Common;
+using RiotConnector;
+using RiotConnector.Common;
 
 var client = new RiotClient(new RiotClientConfiguration
 {

@@ -1,7 +1,7 @@
-﻿using RiotWrapped.Common;
-using RiotWrapped.Extension;
+﻿using RiotConnector.Common;
+using RiotConnector.Extension;
 
-namespace RiotWrapped.Http;
+namespace RiotConnector.Http;
 
 public class RestClient
 {

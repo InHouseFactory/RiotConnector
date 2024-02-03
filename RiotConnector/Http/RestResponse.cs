@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace RiotWrapped.Http;
+namespace RiotConnector.Http;
 
 public class RestResponse<T>
 {

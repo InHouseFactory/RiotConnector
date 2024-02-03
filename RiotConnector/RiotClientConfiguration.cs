@@ -1,4 +1,4 @@
-﻿namespace RiotWrapped;
+﻿namespace RiotConnector;
 
 public class RiotClientConfiguration
 {

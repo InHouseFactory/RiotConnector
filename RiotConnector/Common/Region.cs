@@ -1,4 +1,4 @@
-﻿namespace RiotWrapped.Common;
+﻿namespace RiotConnector.Common;
 
 public enum Region
 {

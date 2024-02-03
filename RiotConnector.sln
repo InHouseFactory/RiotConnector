@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiotWrapped", "RiotWrapped\RiotWrapped.csproj", "{A1BE58DF-50FF-4514-95AF-301E50B5B06A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiotConnector", "RiotConnector\RiotConnector.csproj", "{A1BE58DF-50FF-4514-95AF-301E50B5B06A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

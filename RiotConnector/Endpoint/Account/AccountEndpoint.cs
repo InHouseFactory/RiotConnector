@@ -1,10 +1,10 @@
 ﻿using System.Net;
 using System.Text.Json;
-using RiotWrapped.Common;
-using RiotWrapped.Exception;
-using RiotWrapped.Http;
+using RiotConnector.Common;
+using RiotConnector.Exception;
+using RiotConnector.Http;
 
-namespace RiotWrapped.Endpoint.Account;
+namespace RiotConnector.Endpoint.Account;
 
 public interface IAccountEndpoint
 {
@@ -28,7 +28,7 @@ public class AccountEndpoint : IAccountEndpoint
         {
             HttpStatusCode.OK => JsonSerializer.Deserialize<AccountDto>(response.Body),
             HttpStatusCode.NotFound => default,
-            _ => throw new RiotWrappedException(response.StatusCode, response.Body)
+            _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };
     }
 
@@ -40,7 +40,7 @@ public class AccountEndpoint : IAccountEndpoint
         {
             HttpStatusCode.OK => JsonSerializer.Deserialize<AccountDto>(response.Body),
             HttpStatusCode.NotFound => default,
-            _ => throw new RiotWrappedException(response.StatusCode, response.Body)
+            _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };
     }
 }

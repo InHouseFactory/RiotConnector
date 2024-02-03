@@ -1,9 +1,9 @@
-﻿using RiotWrapped.Endpoint.Account;
-using RiotWrapped.Endpoint.League;
-using RiotWrapped.Endpoint.Summoner;
-using RiotWrapped.Http;
+﻿using RiotConnector.Endpoint.Account;
+using RiotConnector.Endpoint.League;
+using RiotConnector.Endpoint.Summoner;
+using RiotConnector.Http;
 
-namespace RiotWrapped;
+namespace RiotConnector;
 
 public interface IRiotClient
 {

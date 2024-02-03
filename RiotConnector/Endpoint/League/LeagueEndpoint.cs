@@ -1,10 +1,10 @@
 ﻿using System.Net;
 using System.Text.Json;
-using RiotWrapped.Common;
-using RiotWrapped.Exception;
-using RiotWrapped.Http;
+using RiotConnector.Common;
+using RiotConnector.Exception;
+using RiotConnector.Http;
 
-namespace RiotWrapped.Endpoint.League;
+namespace RiotConnector.Endpoint.League;
 
 public interface ILeagueEndpoint
 {
@@ -28,7 +28,7 @@ public class LeagueEndpoint : ILeagueEndpoint
         {
             HttpStatusCode.OK => JsonSerializer.Deserialize<List<LeagueEntryDto>>(response.Body) ?? [],
             HttpStatusCode.NotFound => new List<LeagueEntryDto>(),
-            _ => throw new RiotWrappedException(response.StatusCode, response.Body)
+            _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };
     }
 }

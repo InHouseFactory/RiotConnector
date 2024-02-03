@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace RiotWrapped.Endpoint.Summoner;
+namespace RiotConnector.Endpoint.Summoner;
 
 public class SummonerDto
 {

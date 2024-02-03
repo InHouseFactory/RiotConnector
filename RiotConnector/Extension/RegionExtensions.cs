@@ -1,6 +1,6 @@
-﻿using RiotWrapped.Common;
+﻿using RiotConnector.Common;
 
-namespace RiotWrapped.Extension;
+namespace RiotConnector.Extension;
 
 public static class RegionExtensions
 {

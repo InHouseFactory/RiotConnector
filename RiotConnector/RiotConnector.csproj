@@ -3,13 +3,13 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Title>RiotWrapped</Title>
+        <Title>RiotConnector</Title>
         <Authors>Roxeez</Authors>
         <Company>InHouseFactory</Company>
         <Nullable>enable</Nullable>
         <Description>Wrapper for the RiotGames API</Description>
-        <PackageProjectUrl>https://github.com/InHouseFactory/RiotWrapped</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/InHouseFactory/RiotWrapped</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/InHouseFactory/RiotConnector</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/InHouseFactory/RiotConnector</RepositoryUrl>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryType>git</RepositoryType>

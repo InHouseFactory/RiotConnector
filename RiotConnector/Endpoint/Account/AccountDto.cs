@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace RiotWrapped.Endpoint.Account;
+namespace RiotConnector.Endpoint.Account;
 
 public sealed class AccountDto
 {

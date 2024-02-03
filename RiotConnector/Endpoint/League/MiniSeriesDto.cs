@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace RiotWrapped.Endpoint.League;
+namespace RiotConnector.Endpoint.League;
 
 public class MiniSeriesDto
 {
