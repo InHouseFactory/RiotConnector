@@ -1,5 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using RiotConnector.Common;
+using RiotConnector.Enum;
 
 namespace RiotConnector.Endpoint.League;
 

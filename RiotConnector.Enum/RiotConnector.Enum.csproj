@@ -3,28 +3,17 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Title>RiotConnector</Title>
+        <Title>RiotConnector.Enum</Title>
         <Authors>Roxeez</Authors>
         <Company>InHouseFactory</Company>
         <Nullable>enable</Nullable>
-        <Description>Wrapper for the RiotGames API</Description>
+        <Description>Enum used by RiotConnector</Description>
         <PackageProjectUrl>https://github.com/InHouseFactory/RiotConnector</PackageProjectUrl>
         <RepositoryUrl>https://github.com/InHouseFactory/RiotConnector</RepositoryUrl>
-        <PackageLicenseFile>LICENSE</PackageLicenseFile>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryType>git</RepositoryType>
         <PackageTags>RiotGames, API, Rest, C#</PackageTags>
         <IsPackable>true</IsPackable>
         <Configurations>Debug;Release</Configurations>
     </PropertyGroup>
 
-    <ItemGroup>
-        <None Include="../LICENSE" Pack="true" Visible="false" PackagePath="" />
-        <None Include="../README.md" Pack="true" Visible="false" PackagePath="" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\RiotConnector.Enum\RiotConnector.Enum.csproj" />
-    </ItemGroup>
-    
 </Project>

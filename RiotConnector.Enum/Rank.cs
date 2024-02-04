@@ -1,9 +1,10 @@
 ﻿using System.Runtime.Serialization;
 
-namespace RiotConnector.Common;
+namespace RiotConnector.Enum;
 
 public enum Rank
 {
+    [EnumMember(Value = "UNRANKED")] Unranked,
     [EnumMember(Value = "IRON")] Iron,
     [EnumMember(Value = "BRONZE")] Bronze,
     [EnumMember(Value = "SILVER")] Silver,

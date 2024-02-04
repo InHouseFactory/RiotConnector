@@ -1,4 +1,4 @@
-﻿namespace RiotConnector.Common;
+﻿namespace RiotConnector.Enum;
 
 public enum GameRegion
 {

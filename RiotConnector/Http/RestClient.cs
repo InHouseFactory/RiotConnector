@@ -1,4 +1,4 @@
-﻿using RiotConnector.Common;
+﻿using RiotConnector.Enum;
 using RiotConnector.Extension;
 
 namespace RiotConnector.Http;

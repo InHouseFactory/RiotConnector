@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Text.Json;
-using RiotConnector.Common;
+using RiotConnector.Enum;
 using RiotConnector.Exception;
 using RiotConnector.Http;
 
