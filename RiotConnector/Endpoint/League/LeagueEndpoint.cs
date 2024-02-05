@@ -23,7 +23,7 @@ public class LeagueEndpoint : ILeagueEndpoint
     public async Task<List<LeagueEntryDto>> GetLeagueEntriesBySummonerIdAsync(GameRegion region, string summonerId)
     {
         var response =
-            await client.GetAsync<List<LeagueEntryDto>>(region, $"/riot/league/v1/entries/by-summoner/{summonerId}");
+            await client.GetAsync<List<LeagueEntryDto>>(region, $"/lol/league/v4/entries/by-summoner/{summonerId}");
         return response.StatusCode switch
         {
             HttpStatusCode.OK => JsonSerializer.Deserialize<List<LeagueEntryDto>>(response.Body) ?? [],
