@@ -1,39 +1,40 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using RiotConnector.Enum;
 
 namespace RiotConnector.Endpoint.League;
 
 public class LeagueEntryDto
 {
-    [JsonPropertyName("summonerId")] public required string SummonerId { get; init; }
+    [JsonProperty("summonerId")] public required string SummonerId { get; init; }
 
-    [JsonPropertyName("summonerName")] public required string SummonerName { get; init; }
+    [JsonProperty("summonerName")] public required string SummonerName { get; init; }
 
-    [JsonPropertyName("queueType")]
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    [JsonProperty("queueType")]
+    [JsonConverter(typeof(StringEnumConverter))]
     public required QueueType QueueType { get; init; }
 
-    [JsonPropertyName("tier")]
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    [JsonProperty("tier")]
+    [JsonConverter(typeof(StringEnumConverter))]
     public required Rank Rank { get; init; }
 
-    [JsonPropertyName("rank")]
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    [JsonProperty("rank")]
+    [JsonConverter(typeof(StringEnumConverter))]
     public required Division Division { get; init; }
 
-    [JsonPropertyName("leaguePoints")] public required int LeaguePoints { get; init; }
+    [JsonProperty("leaguePoints")] public required int LeaguePoints { get; init; }
 
-    [JsonPropertyName("wins")] public required int Wins { get; init; }
+    [JsonProperty("wins")] public required int Wins { get; init; }
 
-    [JsonPropertyName("losses")] public required int Losses { get; init; }
+    [JsonProperty("losses")] public required int Losses { get; init; }
 
-    [JsonPropertyName("hotStreak")] public required bool HotStreak { get; init; }
+    [JsonProperty("hotStreak")] public required bool HotStreak { get; init; }
 
-    [JsonPropertyName("veteran")] public required bool Veteran { get; init; }
+    [JsonProperty("veteran")] public required bool Veteran { get; init; }
 
-    [JsonPropertyName("freshBlood")] public required bool FreshBlood { get; init; }
+    [JsonProperty("freshBlood")] public required bool FreshBlood { get; init; }
 
-    [JsonPropertyName("inactive")] public required bool Inactive { get; init; }
+    [JsonProperty("inactive")] public required bool Inactive { get; init; }
 
-    [JsonPropertyName("miniSeries")] public MiniSeriesDto? MiniSeries { get; init; }
+    [JsonProperty("miniSeries")] public MiniSeriesDto? MiniSeries { get; init; }
 }

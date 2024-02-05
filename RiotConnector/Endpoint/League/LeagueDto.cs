@@ -1,21 +1,22 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using RiotConnector.Enum;
 
 namespace RiotConnector.Endpoint.League;
 
 public class LeagueDto
 {
-    [JsonPropertyName("leagueId")] public required string LeagueId { get; init; }
+    [JsonProperty("leagueId")] public required string LeagueId { get; init; }
 
-    [JsonPropertyName("queueType")]
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    [JsonProperty("queueType")]
+    [JsonConverter(typeof(StringEnumConverter))]
     public required QueueType QueueType { get; init; }
 
-    [JsonPropertyName("tier")]
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    [JsonProperty("tier")]
+    [JsonConverter(typeof(StringEnumConverter))]
     public required Rank Rank { get; init; }
 
-    [JsonPropertyName("name")] public required string Name { get; init; }
+    [JsonProperty("name")] public required string Name { get; init; }
 
-    [JsonPropertyName("entries")] public required List<LeagueEntryDto> Entries { get; init; }
+    [JsonProperty("entries")] public required List<LeagueEntryDto> Entries { get; init; }
 }

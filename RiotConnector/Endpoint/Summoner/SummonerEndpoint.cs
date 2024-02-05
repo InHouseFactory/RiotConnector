@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using System.Text.Json;
+using Newtonsoft.Json;
 using RiotConnector.Enum;
 using RiotConnector.Exception;
 using RiotConnector.Http;
@@ -29,7 +29,7 @@ public class SummonerEndpoint : ISummonerEndpoint
             await client.GetAsync<SummonerDto>(region, $"/lol/summoner/v4/summoners/by-name/{summonerName}");
         return response.StatusCode switch
         {
-            HttpStatusCode.OK => JsonSerializer.Deserialize<SummonerDto>(response.Body),
+            HttpStatusCode.OK => JsonConvert.DeserializeObject<SummonerDto>(response.Body),
             HttpStatusCode.NotFound => default,
             _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };
@@ -40,7 +40,7 @@ public class SummonerEndpoint : ISummonerEndpoint
         var response = await client.GetAsync<SummonerDto>(region, $"/lol/summoner/v4/summoners/by-puuid/{puuid}");
         return response.StatusCode switch
         {
-            HttpStatusCode.OK => JsonSerializer.Deserialize<SummonerDto>(response.Body),
+            HttpStatusCode.OK => JsonConvert.DeserializeObject<SummonerDto>(response.Body),
             HttpStatusCode.NotFound => default,
             _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };
@@ -52,7 +52,7 @@ public class SummonerEndpoint : ISummonerEndpoint
             await client.GetAsync<SummonerDto>(region, $"/lol/summoner/v4/summoners/by-account/{accountId}");
         return response.StatusCode switch
         {
-            HttpStatusCode.OK => JsonSerializer.Deserialize<SummonerDto>(response.Body),
+            HttpStatusCode.OK => JsonConvert.DeserializeObject<SummonerDto>(response.Body),
             HttpStatusCode.NotFound => default,
             _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };
@@ -63,7 +63,7 @@ public class SummonerEndpoint : ISummonerEndpoint
         var response = await client.GetAsync<SummonerDto>(region, $"/lol/summoner/v4/summoners/{summonerId}");
         return response.StatusCode switch
         {
-            HttpStatusCode.OK => JsonSerializer.Deserialize<SummonerDto>(response.Body),
+            HttpStatusCode.OK => JsonConvert.DeserializeObject<SummonerDto>(response.Body),
             HttpStatusCode.NotFound => default,
             _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };

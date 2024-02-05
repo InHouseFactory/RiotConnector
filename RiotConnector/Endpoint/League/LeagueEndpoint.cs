@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Text.Json;
+using Newtonsoft.Json;
 using RiotConnector.Enum;
 using RiotConnector.Exception;
 using RiotConnector.Http;
@@ -26,7 +27,7 @@ public class LeagueEndpoint : ILeagueEndpoint
             await client.GetAsync<List<LeagueEntryDto>>(region, $"/lol/league/v4/entries/by-summoner/{summonerId}");
         return response.StatusCode switch
         {
-            HttpStatusCode.OK => JsonSerializer.Deserialize<List<LeagueEntryDto>>(response.Body) ?? [],
+            HttpStatusCode.OK => JsonConvert.DeserializeObject<List<LeagueEntryDto>>(response.Body) ?? [],
             HttpStatusCode.NotFound => new List<LeagueEntryDto>(),
             _ => throw new RiotConnectorException(response.StatusCode, response.Body)
         };

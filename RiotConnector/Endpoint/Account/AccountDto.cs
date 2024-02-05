@@ -1,12 +1,13 @@
 ﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace RiotConnector.Endpoint.Account;
 
 public sealed class AccountDto
 {
-    [JsonPropertyName("puuid")] public required string Puuid { get; init; }
+    [JsonProperty("puuid")] public required string Puuid { get; init; }
 
-    [JsonPropertyName("gameName")] public required string GameName { get; init; }
+    [JsonProperty("gameName")] public required string GameName { get; init; }
 
-    [JsonPropertyName("tagLine")] public required string TagLine { get; init; }
+    [JsonProperty("tagLine")] public required string TagLine { get; init; }
 }
